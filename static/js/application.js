@@ -591,6 +591,13 @@ PyPoker = {
             }));
             PyPoker.Player.setCardsChangeMode(false);
         });
+        
+        $('#ex-cmd').click(function() {
+            PyPoker.socket.send(JSON.stringify({
+                'message_type': 'disconnect',
+            }));
+            PyPoker.Player.disableBetMode();
+        });
 
         $('#fold-cmd').click(function() {
             PyPoker.socket.send(JSON.stringify({
