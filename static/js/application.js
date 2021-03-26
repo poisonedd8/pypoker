@@ -622,6 +622,14 @@ PyPoker = {
             }));
             PyPoker.Player.disableBetMode();
         });
+        
+        $('#c-bet-cmdr').click(function() {
+            PyPoker.socket.send(JSON.stringify({
+                'message_type': 'bet',
+                'bet': $('#bet-input').val(value)
+            }));
+            PyPoker.Player.disableBetMode();
+        });
 
         PyPoker.Player.setCardsChangeMode(false);
         PyPoker.Player.disableBetMode();
